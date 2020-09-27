@@ -1,0 +1,48 @@
+package com.tencent.tpns.bean;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.tencent.tpns.bean.ios.Aps;
+
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class MessageIOS {
+
+    @JsonProperty(value = "aps", required = true)
+    // @ApiModelProperty(notes = "苹果推送服务(APNs)特有的消息体字段")
+    private Aps aps;
+
+    @JsonProperty(value = "custom")
+    // @ApiModelProperty(notes = "自定义下发的参数")
+    private Object custom;
+
+    @JsonProperty(value = "xg")
+    // @ApiModelProperty(notes = "系统保留key，应避免使用")
+    private String xg;
+
+
+    public Object  getCustom() {
+        return custom;
+    }
+
+    public void setCustom(Object custom) {
+        this.custom = custom;
+    }
+
+    public String getXg() {
+        return xg;
+    }
+
+    public void setXg(String xg) {
+        this.xg = xg;
+    }
+
+
+    public Aps getAps() {
+        return aps;
+    }
+
+    public void setAps(Aps aps) {
+        this.aps = aps;
+    }
+
+}
